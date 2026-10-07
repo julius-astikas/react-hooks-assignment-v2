@@ -1,0 +1,146 @@
+.card-description {
+  margin: 0 0 1rem;
+  color: #666;
+}
+
+.cookie-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 165px;
+}
+
+.cookie-button {
+  display: block;
+  width: clamp(130px, 16vw, 175px);
+  padding: 0;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cookie-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  transition: transform 180ms ease;
+}
+
+.cookie-button:hover img {
+  transform: scale(1.1);
+}
+
+.cookie-button:active img {
+  transform: scale(0.95);
+}
+
+.cookie-button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 5px;
+  border-radius: 8px;
+}
+
+.points {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.points strong {
+  display: inline-block;
+  min-width: 2.2rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #1d4ed8;
+}
+
+/* Small local celebration shown after each cookie click. */
+.point-burst {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.point-burst span {
+  position: absolute;
+  font-size: 1.45rem;
+  animation: confetti-pop 750ms ease-out forwards;
+}
+
+.point-burst span:nth-child(1) {
+  --x: -90px;
+  --y: -75px;
+}
+
+.point-burst span:nth-child(2) {
+  --x: -40px;
+  --y: -100px;
+}
+
+.point-burst span:nth-child(3) {
+  --x: 35px;
+  --y: -105px;
+}
+
+.point-burst span:nth-child(4) {
+  --x: 90px;
+  --y: -70px;
+}
+
+.point-burst span:nth-child(5) {
+  --x: -105px;
+  --y: 5px;
+}
+
+.point-burst span:nth-child(6) {
+  --x: 105px;
+  --y: 10px;
+}
+
+.point-burst span:nth-child(7) {
+  --x: -65px;
+  --y: 65px;
+}
+
+.point-burst span:nth-child(8) {
+  --x: 70px;
+  --y: 60px;
+}
+
+@keyframes confetti-pop {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4) rotate(0deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(1.2) rotate(240deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-button img {
+    transition: none;
+  }
+
+  .cookie-button:hover img,
+  .cookie-button:active img {
+    transform: none;
+  }
+
+  .point-burst span {
+    animation: none;
+    display: none;
+  }
+}

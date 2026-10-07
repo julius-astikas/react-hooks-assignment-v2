@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { mockData } from "../data/mockData";
+import "./Users.css";
 
 function Users() {
   // Start with the provided mock data, then manage changes with React state.
@@ -19,6 +20,7 @@ function Users() {
       return;
     }
 
+    // Require at least one letter so the username cannot contain only numbers.
     if (!/[a-zA-ZæøåÆØÅ]/.test(trimmedUsername)) {
       setError("Username must contain letters.");
       return;

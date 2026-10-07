@@ -1,0 +1,58 @@
+.user-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.user-form input {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.user-form button {
+  padding: 0.55rem 0.9rem;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.user-form button:hover {
+  background: #1d4ed8;
+}
+
+.error-message {
+  color: #b42318;
+  font-weight: bold;
+}
+
+.user-list {
+  padding-left: 1.25rem;
+}
+
+.users-card {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 700px) {
+  .users-card {
+    grid-column: auto;
+  }
+
+  .user-form {
+    flex-direction: column;
+  }
+
+  .user-form button {
+    align-self: flex-start;
+  }
+
+  .user-form input {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
